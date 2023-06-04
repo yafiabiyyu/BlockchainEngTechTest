@@ -1,13 +1,51 @@
-# Sample Hardhat Project
+# Voting
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Requirements
 
-Try running some of the following tasks:
+- [Node.js](https://nodejs.org/en/download/) v14.17.6 LTS or higher
+- [Hardhat](https://hardhat.org/getting-started/#overview)
 
-```shell
-npx hardhat help
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yafiabiyyu/BlockchainEngTechTest.git
+```
+
+2. Install dependencies
+
+```bash
+cd BlockchainEngTechTest
+
+npm install
+```
+
+3. Create a `.env` file and add your Goerli RPC Provider URL and your mnemonic
+
+```
+MNEMONIC="YOUR MNEMONIC"
+RPC="YOUR GOERLI RPC PROVIDER URL"
+```
+
+4. Compile the contracts
+
+```bash
+npx hardhat compile
+```
+
+5. Run the tests
+
+```bash
 npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+
+# or coverage test
+
+npx hardhat coverage
+```
+
+6. Deploy the contracts
+
+```bash
+npx hardhat run scripts/deploy.js --network goerli
 ```
