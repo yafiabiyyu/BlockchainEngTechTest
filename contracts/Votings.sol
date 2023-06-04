@@ -51,8 +51,6 @@ contract Votings {
 
     function registerCandidate(uint256 candidatId_, string memory name_, string memory imageURI_) external onlyOwner {
         require(block.timestamp < startTime, "Vote: Voting has started");
-        // uint256 candidateIndex = candidatId_ - 1;
-        // require(keccak256(bytes(_candidate[candidateIndex].name)) != keccak256(bytes("")), "Vote: Candidate name already exist");
         for(uint256 i = 0; i < _candidate.length; i++){
             if(keccak256(bytes(_candidate[i].name)) == keccak256(bytes(name_))){
                 revert("Vote: Candidate name already exist");
