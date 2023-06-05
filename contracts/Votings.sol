@@ -12,6 +12,7 @@ contract Votings {
 
     struct Candidate {
         string name;
+        string imageURI;
         uint256 candidatId;
         uint256 voteCount;
         address[] voters;
@@ -59,6 +60,7 @@ contract Votings {
         _candidate.push(
             Candidate(
                 name_,
+                imageURI_,
                 candidatId_,
                 0,
                 new address[](0)
